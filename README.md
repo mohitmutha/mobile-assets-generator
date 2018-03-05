@@ -14,4 +14,4 @@ From command line run
 ./generator.py --launchimage <LAUNCHIMAGE_PATH> --icon <ICONIMAGE_PATH>
 ```
 
-
+For the launch image ensure that the content is placed in the center with space around it. The script trims around the center to produce images of different sizes.
