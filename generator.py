@@ -213,9 +213,6 @@ def generate_launch_image_ios(image_name):
     for item in sizes:
         img_size_x = item["size"][0]
         img_size_y = item["size"][1]
-        print (2048-img_size_y) / 2
-        print img_size_y
-        #i = img.crop(((2048-img_size_x) / 2, (2048-img_size_y) /2, img_size_x + (2048-img_size_x) / 2, img_size_y + (2048-img_size_y) / 2))
         i = ImageOps.fit(img,(img_size_x, img_size_y), Image.NEAREST)
         folder = "{0}/ios/{1}".format(current_dir, item["folder"])
         if not os.path.exists(folder):
@@ -282,7 +279,7 @@ def generate_launch_image_android(image_name):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Assets generator for iOS projects")
+    parser = argparse.ArgumentParser(description="Assets generator for iOS and Android projects")
     parser.add_argument("--launchimage",
                         help="Generate launch image assets")
     parser.add_argument("--icon",
